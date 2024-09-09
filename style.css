@@ -147,6 +147,7 @@ footer {
     display: flex;
     gap: 1rem;
     align-items: center;
+    justify-content: center;
 }
 
 .footer-social .social-icons a img {
@@ -157,6 +158,78 @@ footer {
 footer p {
     margin: 5px 0;
     font-weight: 400;
+}
+
+#nossas-atividades {
+    background-color: #e0f7f9;
+    padding: 3rem 4rem;
+    text-align: center;
+}
+
+#nossas-atividades h2 {
+    color: #1c6c78;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#nossas-atividades p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.activities-container {
+    display: grid;
+    grid-column-gap: 2em;
+    grid-row-gap: 2em;
+    margin: 2em;
+    justify-content: space-evenly;
+}
+
+.activity-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.activity-card img {
+    max-height: 150px;
+    margin-bottom: 15px;
+}
+
+.activity-card h3 {
+    color: #1c6c78;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.activity-card p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.btn-atividade {
+    background-color: #1c6c78;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.btn-atividade:hover {
+    background-color: #155760;
 }
 
 /* Responsivo */
@@ -196,9 +269,12 @@ footer p {
         margin-right: 20px;
     }
 
+    .activities-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .footer-container {
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
     }
 
@@ -208,5 +284,9 @@ footer p {
 
     .footer-social {
         text-align: right;
+    }
+
+    .footer-social .social-icons {
+        justify-content: flex-start;
     }
 }
