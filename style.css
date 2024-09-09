@@ -183,10 +183,9 @@ footer p {
 
 .activities-container {
     display: grid;
+    justify-content: space-evenly;
     grid-column-gap: 2em;
     grid-row-gap: 2em;
-    margin: 2em;
-    justify-content: space-evenly;
 }
 
 .activity-card {
@@ -271,6 +270,7 @@ footer p {
 
     .activities-container {
         grid-template-columns: repeat(3, 1fr);
+        margin: 2em;
     }
 
     .footer-container {
