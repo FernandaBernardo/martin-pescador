@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Contribua com o Instituto Martin Pescador e ajude a transformar vidas por meio de doações recorrentes, Pix ou doação de alimentos, roupas e brinquedos.">
+	<meta name="keywords" content="doação, Instituto Martin Pescador, doação recorrente, Pix, doação de alimentos, doação de roupas, doação de brinquedos">
+	<meta name="robots" content="index, follow">
+	<meta property="og:title" content="Doe para o Instituto Martin Pescador">
+	<meta property="og:description" content="Ajude a manter nossas atividades com sua doação. Escolha entre doação recorrente, Pix ou doações de itens físicos.">
+	<meta property="og:image" content="images/doe.png">
+	<meta property="og:url" content="https://www.institutomartinpescador.org.br/doacao.html">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Doe para o Instituto Martin Pescador">
+	<meta name="twitter:description" content="Ajude a transformar vidas com sua doação.">
+	
+	<title>Doe para o Instituto Martin Pescador</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/png" sizes="16x16"  href="images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Berkshire+Swash&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="./index.html">Início</a></li>
+				<li><a href="./index.html#sobre-nos">Sobre Nós</a></li>
+				<li><a href="./index.html#nossas-atividades">Atividades</a></li>
+				<li><a href="./doacao.html" class="btn-doe">Doe Agora</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section id="doacao-hero">
+		<h1>Contribua e Ajude a Transformar Vidas</h1>
+		<p>O Instituto Martin Pescador depende de doações para manter suas atividades e continuar impactando vidas. Escolha a melhor forma de contribuir e faça parte dessa transformação.</p>
+	</section>
+
+	<section id="opcoes-doacao">
+		<h2>Formas de Doação</h2>
+		<p>Escolha a melhor maneira de contribuir com o Instituto Martin Pescador:</p>
+
+		<div class="doacao-container">
+			<div class="doacao-card">
+				<!-- <img src="images/cartao.png" alt="Doação Recorrente no Cartão"> -->
+				<h3>Recorrente</h3>
+				<p>Contribua mensalmente de forma fácil e segura. Sua doação nos ajuda a manter nossas atividades contínuas.</p>
+				<a href="https://www.paypal.com/donate/?hosted_button_id=HTZRRKR9D7NW6" class="btn-doacao">Doe com Cartão</a>
+			</div>
+
+			<div class="doacao-card">
+				<!-- <img src="images/pix.png" alt="Doe via Pix"> -->
+				<h3>PIX</h3>
+				<p>Nossa chave é: <strong id="pix-key">pix@institutomartinpescador.org.br</strong></p>
+				<p>Instituto Martin Pescador</p>
+				<p>CNPJ: 56.339.721/0001-85</p>
+				<p>Banco Cora</p>
+				<p>Ag 0001 - c/c 5312407-2</p>
+				<a onclick="copyPixKey()" class="btn-doacao">Copiar chave PIX</a>
+				<p id="copy-confirmation" style="display: none; color: green; font-weight: bold;">Chave Pix copiada!</p>
+			</div>
+
+			<div class="doacao-card">
+				<!-- <img src="images/alimentos.png" alt="Doação de Alimentos, Roupas e Brinquedos"> -->
+				<h3>Itens gerais</h3>
+				<p>Contribua doando alimentos não perecíveis, roupas, brinquedos e acessórios diretamente na sede do Instituto. Estamos localizados na Av. Água Fria, 1365 - São Paulo / SP.</p>
+				<a href="https://maps.app.goo.gl/QrHJWaHxXb4hQY8t7" class="btn-doacao">Ver Localização</a>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="footer-container">
+			<img src="images/logo.png" alt="Logo Instituto Martin Pescador" class="footer-logo">
+			<div class="footer-logo-info">
+				<p><strong>Instituto Martin Pescador</strong></p>
+				<p>CNPJ: 56.339.721/0001-85</p>
+				<a href="https://maps.app.goo.gl/QrHJWaHxXb4hQY8t7">Av. Água Fria, 1365 - Água Fria - São Paulo / SP</a>
+			</div>
+			<div class="footer-social">
+				<p><strong>Siga nossas redes sociais</strong></p>
+				<div class="social-icons">
+					<a href="https://www.instagram.com/institutomartinpescador/"><img src="images/instagram.png" alt="Instagram"></a>
+					<a href="mailto:contato@institutomartinpescador.org.br"><img src="images/email.png" alt="E-mail"></a>
+					<a href="https://wa.me/5511936183263"><img src="images/whatsapp.png" alt="WhatsApp"></a>
+				</div>
+			</div>
+		</div>
+		<p>&copy; Instituto Martin Pescador <script>document.write(new Date().getFullYear());</script></p>
+	</footer>
+
+	<script>
+		function copyPixKey() {
+			// Seleciona o texto da chave Pix
+			const pixKey = document.getElementById('pix-key').innerText;
+	
+			// Cria um campo de texto temporário para copiar o conteúdo
+			const tempInput = document.createElement('input');
+			tempInput.value = pixKey;
+			document.body.appendChild(tempInput);
+			tempInput.select();
+			tempInput.setSelectionRange(0, 99999); // Para dispositivos móveis
+	
+			// Executa o comando de cópia
+			document.execCommand('copy');
+	
+			// Remove o campo de texto temporário
+			document.body.removeChild(tempInput);
+	
+			// Exibe uma mensagem de confirmação
+			document.getElementById('copy-confirmation').style.display = 'block';
+	
+			// Oculta a mensagem após 3 segundos
+			setTimeout(() => {
+				document.getElementById('copy-confirmation').style.display = 'none';
+			}, 3000);
+		}
+	</script>
+</body>
+</html>
