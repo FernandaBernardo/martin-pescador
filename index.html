@@ -110,6 +110,22 @@
 		</div>
 	</section>
 
+	<section id="acoes-carrossel">
+		<h2>Confira Nossas Ações</h2>
+		<div class="carousel-container">
+			<button class="carousel-btn prev-btn" onclick="moveSlide(-1, true)">&#10094;</button>			<div class="carousel">
+				<div class="slide"><img src="images/acao5.png" alt="Ação 5"></div>
+				<div class="slide"><img src="images/acao1.png" alt="Ação 1"></div>
+				<div class="slide"><img src="images/acao7.png" alt="Ação 7"></div>
+				<div class="slide"><img src="images/acao2.png" alt="Ação 2"></div>
+				<div class="slide"><img src="images/acao3.png" alt="Ação 3"></div>
+				<div class="slide"><img src="images/acao4.png" alt="Ação 4"></div>
+				<div class="slide"><img src="images/acao6.png" alt="Ação 6"></div>
+			</div>
+			<button class="carousel-btn next-btn" onclick="moveSlide(1, true)">&#10095;</button>
+		</div>
+	</section>
+
 	<footer>
 		<div class="footer-container">
 			<img src="images/logo.png" alt="Logo Instituto Martin Pescador" class="footer-logo">
@@ -138,6 +154,43 @@
 	gtag('js', new Date());
 
 	gtag('config', 'G-5HYWZJTGW7');
+	</script>
+	<script>
+		let currentSlide = 0;
+		let autoplayInterval;
+	
+		// Função para mover os slides
+		function moveSlide(direction, cancelAutoplay = false) {
+			const carousel = document.querySelector('.carousel');
+			const slides = document.querySelectorAll('.slide');
+			const totalSlides = slides.length;
+	
+			// Atualiza o índice do slide atual
+			currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+	
+			// Move o carrossel
+			carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+	
+			// Cancela o autoplay somente se o usuário clicar manualmente
+			if (cancelAutoplay) {
+				stopAutoplay();
+			}
+		}
+	
+		// Função para iniciar o autoplay
+		function startAutoplay() {
+			autoplayInterval = setInterval(() => {
+				moveSlide(1); // Avança automaticamente para o próximo slide
+			}, 3000); // Alterar o tempo (em milissegundos) conforme necessário
+		}
+	
+		// Função para parar o autoplay
+		function stopAutoplay() {
+			clearInterval(autoplayInterval);
+		}
+	
+		// Inicia o autoplay automaticamente ao carregar a página
+		document.addEventListener('DOMContentLoaded', startAutoplay);
 	</script>
 </body>
 </html>
